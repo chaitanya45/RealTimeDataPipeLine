@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: real-time-data-pipeline
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: real-time-data-pipeline
+  template:
+    metadata:
+      labels:
+        app: real-time-data-pipeline
+    spec:
+      containers:
+      - name: real-time-data-pipeline
+        image: real-time-data-pipeline:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "your-kafka-bootstrap-servers"
+        - name: KAFKA_TOPIC
+          value: "text-data"
+        - name: REDIS_HOST
+          value: "redis-service"
+        - name: REDIS_PORT
+          value: "6379"
+        - name: S3_BUCKET
+          value: "your-s3-bucket"
+        - name: AWS_REGION
+          value: "us-east-1"

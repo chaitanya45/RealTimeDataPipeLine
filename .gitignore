@@ -1,2 +1,40 @@
+# Environment variables
 .env
-.nodemodules
+.env.*
+!.env.sample
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Dependencies
+.nodemodules/
+venv/
+env/
+
+# Large files
+kubectl.exe
+
+# IDE
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+kubectl.exe
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.env.local
+.env.*.local
+.idea/
+.vscode/
+kubectl.exe
+__pycache__/
+*.pyc
+.env.local
+.env.*.local
